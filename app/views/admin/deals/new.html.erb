@@ -1,0 +1,15 @@
+<%= form_for @deal, url: :deals do |f| %>
+
+<div class="field">
+   <%= f.label :brand_name %><br />
+   <%= f.text_field :brand_name %>
+
+   <%= f.label :product_description %><br />
+   <%= f.text_field :product_description %>
+ </div>
+
+ <div class="actions">
+   <%= f.submit %>
+ </div>
+
+ <% end %>

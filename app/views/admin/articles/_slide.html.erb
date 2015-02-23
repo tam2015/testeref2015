@@ -1,0 +1,19 @@
+<div class="qk-slider float-width">
+   <h3 class="sldr-title">slider</h3>
+   <div class="flexslider news-sldr">
+      <ul class="slides">
+         <% @articles.each do |article| %>
+            <li>
+               <div class="trans2 slide-sngl">
+                  <a class="text-center" href="#"><%= image_tag(article.image_url(:small_2), alt: "Blog", class: "lefty" ) %></a>
+                  <h4><a href="#"><%= link_to article.title, article_path(id: article.id), method: :get %></a></h4>
+                  <%= link_to(article_path(id: article.id), method: :get) do %>
+                  <p class= "giveMeEllipsis_3"><%= article.content %></p>
+                  <% end %>
+                  <h6><span><i class="fa fa-clock-o"></i><%= article.created_at %></span></h6>
+               </div>
+            </li>
+         <% end %>
+      </ul>
+   </div>
+</div>

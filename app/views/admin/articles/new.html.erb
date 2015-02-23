@@ -1,0 +1,44 @@
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+<div class="container ">
+   <!-- Main left side -->
+   <div class="main-left-side">
+   <h3 class="sec-title">Sugira uma promoção</h3>
+
+
+<%= form_for @article, url: :articles, role:"form", id:"contactform" do |f| %>
+
+<div class="field">
+   <%= f.label :title %>
+   <%= f.text_field :title, class:"form-control"  %><br />
+
+   <%= f.label :content %>
+   <%= f.text_area :content, class:"form-control", rows:"6" %><br />
+
+   <p>
+     <%= f.label :image %>
+     <%= f.file_field :image %><br />
+   </p>
+
+   <%= f.label :tag_list, "Tags (separadas por vírgula)" %><br />
+   <%= f.text_field :tag_list, class:"form-control" %><br /><br />
+ </div>
+
+<%=  f.fields_for :deals do |builder| %>
+
+  <%= render "deal_fields", f: builder %>
+
+ <% end %>
+
+ <div class="actions">
+   <%= f.submit %>
+ </div>
+
+ <% end %>
+
+</div>
+</div>
+
+
+

@@ -1,0 +1,77 @@
+<div class="container">
+   <div class="main-news-blks">
+      <div class="hm-slider-cont">
+         <!-- News slider -->
+         <div class="flex-container">
+            <div class="flexslider hm-slider">
+               <ul class="slides">
+                  <% Admin::Article.top_articles("saúde").each do |article| %>
+                     <li>
+                        <%= image_tag article.image_url(:index_top_left) if article %>
+                        <h3 class="cat-label cat-label1"><a href="#"><%= article.category_name %></a></h3>
+                        <div class="hm-sldr-caption">
+                           <h3 class= "giveMeEllipsis_2"><a href="#"><%=link_to article.title, article_path(id: article.id), method: :get %><span class="topic-icn"><%= article.category_count %></span></a></h3>
+                           <%= link_to(article_path(id: article.id), method: :get) do %>
+                           <p class= "giveMeEllipsis_3">
+                              <%= article.content %>
+                           </p>
+                           <% end %>
+                        </div>
+                     </li>
+                  <% end %>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- Fixed Blocks -->
+      <div class="mid-blks-cont">
+         <!-- Block1 -->
+         <div class="mid-block-1 boxgrid caption">
+            <%= image_tag Admin::Article.top_articles("saúde")[0].image_url(:index_top_left) if Admin::Article.top_articles("saúde") %>
+            <h4 class="cat-label cat-label2"><a href="#"><%=Admin::Article.top_articles("saúde")[0].category_name %></a></h4>
+            <div class="cover boxcaption">
+               <h3><a href="#single.html"><%= Admin::Article.top_articles("saúde")[0].title %></a><span class="topic-icn"><%= Admin::Article.top_articles("saúde")[0].category_count %></span></h3>
+               <p class= "giveMeEllipsis_2">
+                  <%= Admin::Article.top_articles("saúde")[0].content %>
+               </p>
+               <%= link_to(article_path(id: Admin::Article.top_articles("saúde")[0].id), method: :get) do %>
+               Mais <i class="fa fa-angle-double-right">
+               </i>
+               <% end %>
+            </div>
+         </div>
+         <!-- Block2 -->
+         <div class="mid-block-2 boxgrid caption">
+            <%= image_tag Admin::Article.top_articles("saúde")[1].image_url(:index_top_left) if Admin::Article.top_articles("saúde") %>
+            <h4 class="cat-label cat-label3"><a href="#"><%=Admin::Article.top_articles("saúde")[1].category_name %></a></h4>
+            <div class="cover boxcaption">
+               <h3><a href="#single.html"><%= Admin::Article.top_articles("saúde")[1].title %></a><span class="topic-icn"><%= Admin::Article.top_articles("saúde")[1].category_count %></span></h3>
+               <p class= "giveMeEllipsis_2">
+                  <%= Admin::Article.top_articles("saúde")[1].content %>
+               </p>
+               <%= link_to(article_path(id: Admin::Article.top_articles("saúde")[1].id), method: :get) do %>
+               Mais <i class="fa fa-angle-double-right">
+               </i>
+               <% end %>
+            </div>
+         </div>
+      </div>
+      <!-- Block3 -->
+      <div class="rt-bk-cont">
+         <div class="rt-block boxgrid2 caption">
+            <%= image_tag Admin::Article.top_articles("saúde")[2].image_url(:index_top_left) if Admin::Article.top_articles("saúde") %>
+            <h4 class="cat-label cat-label4"><a href="#"><%=Admin::Article.top_articles("saúde")[2].category_name %></a></h4>
+            <div class="cover boxcaption">
+               <h3><a href="#single.html"><%= Admin::Article.top_articles("saúde")[2].title %></a><span class="topic-icn"><%= Admin::Article.top_articles("saúde")[2].category_count %></span></h3>
+               <p class= "giveMeEllipsis_2">
+                  <%= Admin::Article.top_articles("saúde")[2].content %>
+               </p>
+               <%= link_to(article_path(id: Admin::Article.top_articles("saúde")[2].id), method: :get) do %>
+               Mais <i class="fa fa-angle-double-right">
+               </i>
+               <% end %>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

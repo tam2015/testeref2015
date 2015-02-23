@@ -1,0 +1,42 @@
+<div class="main-menu">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8">
+            <!-- Main Menu -->
+            <ul id="main-menu-items" class="sm sm-menu menu-efct">
+               <% Admin::Category.all.each do |category| %>
+               <li class="mega-menu-li">
+                  <a href="#"><%= category.name %></a>
+                  <!-- Main Menu - Mega Menu -->
+                  <ul class="mega-menu sub-1st">
+                  <% Admin::Article.top_articles(category.name).each do |article| %>
+                     <li>
+                        <div class="sec-1-sm">
+                           <%= image_tag(article.image_url(:small), alt: "Blog", class: "lefty" ) %>
+                           <div class="sec-1-sm-text blocky">
+                              <h3><%=article.title %></h3>
+                              <h6><span><i class="fa fa-clock-o"></i><%=article.created_at %></span><span><i class="fa fa-comment-o"></i>21 comments</span></h6>
+                              <p class= "giveMeEllipsis_2"><%=article.content %></p>
+                           </div>
+                        </div>
+                     </li>
+                     <% end %>
+                  </ul>
+               </li>
+               <% end %>
+            </ul>
+         </div>
+         <div class="col-lg-4 main-search-bar">
+            <!-- Top Search bar -->
+            <%= form_tag category_path, method: :get , class:"navbar-form float-width", role:"search" do %>
+               <div class="form-group float-width">
+                  <%= text_field_tag :query, params[:query], type:"text", class:"form-control float-width", placeholder:"Procure uma oferta" %>
+               </div>
+               <a href="#" type="submit"><i class="fa fa-search"></i></a>
+            <% end %>
+            </div>
+      </div>
+      <!-- Close the Fixed Menu button -->
+      <a class="fxd-mnu-x trans1" title="Close" id="hidemenu"><span class="fa-stack fa-lg"> <i class="fa fa-times fa-stack-1x fa-inverse"></i> </span></a>
+   </div>
+</div>

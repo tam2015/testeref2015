@@ -1,0 +1,53 @@
+<div class="news-sec-1 float-width">
+   <div class="float-width sec-cont2">
+      <h3 class="sec-title">MUSIC NEWS</h3>
+      <div class="sec-1-big float-width">
+         <%= image_tag(@articles[6].image_url(:small), alt: "Blog", class: "lefty" ) %>
+         <div class="sec-1-big-text lefty">
+            <h3 class= "giveMeEllipsis_2"><%= link_to @articles[6].title, article_path(id: @articles[6].id), method: :get %></h3>
+            <h6><span><i class="fa fa-user"></i>Daniele Pedroso</span><span><i class="fa fa-clock-o"></i><%= @articles[6].created_at %></span><span><i class="fa fa-comment-o"></i>21 comments</span></h6>
+            <%= link_to(article_path(id: @articles[6].id), method: :get) do %>
+            <p class= "giveMeEllipsis_6"><%= @articles[6].content %></p>
+            <% end %>
+         </div>
+      </div>
+      <div class="sec-1-sm">
+      <%= image_tag(@articles[7].image_url(:small), alt: "Blog", class: "lefty" ) %>
+         <div class="sec-1-sm-text blocky">
+            <h3 class= "giveMeEllipsis_2"><%= link_to @articles[7].title, article_path(id: @articles[7].id), method: :get %></h3>
+            <h6><span><i class="fa fa-clock-o"></i><%= @articles[7].created_at %></span><span><i class="fa fa-comment-o"></i>21 comments</span></h6>
+            <%= link_to(article_path(id: @articles[7].id), method: :get) do %>
+            <p class= "giveMeEllipsis_2"><%= @articles[7].content %></p>
+            <% end %>
+         </div>
+      </div>
+      <div class="sec-1-sm">
+      <%= image_tag(@articles[8].image_url(:small), alt: "Blog", class: "lefty" ) %>
+         <div class="sec-1-sm-text blocky">
+            <h3 class= "giveMeEllipsis_2"><%= link_to @articles[8].title, article_path(id: @articles[8].id), method: :get %></h3>
+            <h6><span><i class="fa fa-clock-o"></i><%= @articles[8].created_at %></span><span><i class="fa fa-comment-o"></i>21 comments</span></h6>
+            <p class= "giveMeEllipsis_2"><%= @articles[8].content %></p>
+         </div>
+      </div>
+      <div class="sec-1-sm">
+      <%= image_tag(@articles[9].image_url(:small), alt: "Blog", class: "lefty" ) %>
+         <div class="sec-1-sm-text blocky">
+            <h3 class= "giveMeEllipsis_2"><%= link_to @articles[9].title, article_path(id: @articles[9].id), method: :get %></h3>
+            <h6><span><i class="fa fa-clock-o"></i><%= @articles[9].created_at %></span><span><i class="fa fa-comment-o"></i>21 comments</span></h6>
+            <%= link_to(article_path(id: @articles[9].id), method: :get) do %>
+            <p class= "giveMeEllipsis_2"><%= @articles[9].content %></p>
+            <% end %>
+         </div>
+      </div>
+      <div class="sec-1-sm">
+      <%= image_tag(@articles[10].image_url(:small), alt: "Blog", class: "lefty" ) %>
+         <div class="sec-1-sm-text blocky">
+            <h3 class= "giveMeEllipsis_2"><%= link_to @articles[10].title, article_path(id: @articles[10].id), method: :get %></h3>
+            <h6><span><i class="fa fa-clock-o"></i><%= @articles[10].created_at %></span><span><i class="fa fa-comment-o"></i>21 comments</span></h6>
+            <%= link_to(article_path(id: @articles[10].id), method: :get) do %>
+            <p class= "giveMeEllipsis_2"><%= @articles[10].content %></p>
+            <% end %>
+         </div>
+      </div>
+   </div>
+</div>

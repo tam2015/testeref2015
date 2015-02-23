@@ -1,0 +1,79 @@
+<div class="main-right-side">
+   <!-- One image slider -->
+   <div class="sm-sldr-box float-width">
+      <div class="flexslider sm-sldr">
+         <ul class="slides">
+            <li>
+               <%= image_tag("img/samples/z2.jpg", alt: "Blog", class: "lefty" ) %>
+            </li>
+            <li>
+               <%= image_tag("img/samples/z2.jpg", alt: "Blog", class: "lefty" ) %>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <!-- Social Media Counter -->
+   <div class="smedia lefty">
+      <div class="w50 blocky"><a href="#"><%= image_tag("img/fb.png", alt: "Blog", class: "lefty" ) %><span>6423</span></a></div>
+      <div class="w50 blocky"><a href="#"><%= image_tag("img/tw.png", alt: "Blog", class: "lefty" ) %><span>12344</span></a></div>
+      <div class="w50 blocky"><a href="#"><%= image_tag("img/gplus.png", alt: "Blog", class: "lefty" ) %><span>1846</span></a></div>
+      <div class="w50 blocky"><a href="#"><%= image_tag("img/drp.png", alt: "Blog", class: "lefty" ) %><span>416</span></a></div>
+      <div class="w50 blocky"><a href="#"><%= image_tag("img/flkr.png", alt: "Blog", class: "lefty" ) %><span>91</span></a></div>
+      <div class="w50 blocky"><a href="#"><%= image_tag("img/ig.png", alt: "Blog", class: "lefty" ) %><span>3487</span></a></div>
+   </div>
+   <!-- Trending news right -->
+   <div class="trending lefty">
+      <h3 class="sec-title">TRENDING</h3>
+      <div class="trend-1">
+         <a href="#">
+         <%= image_tag(Admin::Article.last.image_url(:right_side_bar)) %>
+         </a>
+         <a class="lefty cat-a cat-label2" href="#"><%=Admin::Article.last.category_name %></a>
+         <div class="trend-2">
+            <h3 class= "giveMeEllipsis_2"><a href="#"><%= link_to Admin::Article.last.title, article_path(id: Admin::Article.last.id), method: :get %></a></h3>
+            <%= link_to(article_path(id: Admin::Article.last.id), method: :get) do  %>
+            <p class= "giveMeEllipsis_2">
+               <%= Admin::Article.last.content %>
+            </p>
+            <% end %>
+            <p class="artcl-time-1">
+               <span><i class="fa fa-clock-o"></i><%= Admin::Article.last.created_at %></span>
+               <span><i class="fa fa-comment-o"></i><%= Admin::Article.last.comments.count %></span>
+            </p>
+         </div>
+      </div>
+
+      <div class="float-width">
+         <% Admin::Article.last(3).each do |article| %>
+         <div class="trend-sm float-width">
+            <a href="#"><%= image_tag(article.image_url(:small), alt: "Blog", class: "lefty" ) %></a>
+            <h4  class="lefty giveMeEllipsis_2"><%= link_to article.title, article_path(id: article.id), method: :get %></h4></br></br>
+            <a class="lefty cat-a cat-label2" href="#"><%= article.category_name %></a></br>
+            <p class="righty"><span><i class="fa fa-clock-o"></i><%= article.created_at %></span></p>
+         </div>
+         <% end %>
+      </div>
+   </div>
+   <!-- Flicker Widget -->
+   <div class="flkr-cont lefty">
+      <h3 class="sec-title">FLICKR WIDGET</h3>
+      <div id="basicuse"></div>
+   </div>
+   <!-- News letter subscription -->
+   <div class="subscribe lefty">
+      <h3 class="sec-title">NEWSLETTER</h3>
+      <h6>Inscreva-se em nossa lista newsletter para ser o primeiro a saber sobre novos produtos e promoções.</h6>
+      <%= form_for :newsletter_user, url: :newsletter_users, method: :post do |f| %>
+         <div class="form-group">
+            <%= f.text_field :email, class:"lefty", placeholder:"Insira o seu email" %>
+            <%= f.hidden_field :subject, value: :all %>
+         </div>
+         <%= f.submit "salvar"  %>
+      <% end %>
+      </form>
+   </div>
+   <!-- Ad banner right -->
+   <div class="lefty ad-rt">
+      <a href="#"><%= image_tag("img/samples/u1.jpg")%></a>
+   </div>
+</div>

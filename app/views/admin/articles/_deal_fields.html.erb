@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#brand_name_auto_complete" ).autocomplete({
+      source: $('#brand_name_auto_complete').data('autocomplete-source')
+    });
+    $( "#store_name_auto_complete" ).autocomplete({
+      source: $('#store_name_auto_complete').data('autocomplete-source')
+    });
+    $( "#product_description_auto_complete" ).autocomplete({
+      source: $('#product_description_auto_complete').data('autocomplete-source')
+    });
+  });
+  </script>
+</head>
+<body>
+
+<div class="field">
+
+   <%= f.label :product_description %>
+   <%= f.text_field :product_description, id: "product_description_auto_complete", data: {autocomplete_source: products_path}, class:"form-control"  %><br/><br/>
+
+   <%= f.label :brand_name %>
+   <%= f.text_field :brand_name, id: "brand_name_auto_complete", data: {autocomplete_source: brands_path}, class:"form-control"  %><br/><br/>
+
+   <%= f.label :store_name %>
+   <%= f.text_field :store_name, id: "store_name_auto_complete", data: {autocomplete_source: stores_path}, class:"form-control"  %><br/><br/>
+
+
+   <%= f.label :category_name %>
+   <%= f.collection_select :category_name, Admin::Category.all,:name,:name, include_blank: true  %><br /><br/>
+
+ </div>
+
+
+</body>
+</html>
+
+
