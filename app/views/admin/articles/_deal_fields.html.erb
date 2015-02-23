@@ -1,4 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Autocomplete - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
 
+  <script>
+  $(function() {
+    $( "#brand_name_auto_complete" ).autocomplete({
+      source: $('#brand_name_auto_complete').data('autocomplete-source')
+    });
+    $( "#store_name_auto_complete" ).autocomplete({
+      source: $('#store_name_auto_complete').data('autocomplete-source')
+    });
+    $( "#product_description_auto_complete" ).autocomplete({
+      source: $('#product_description_auto_complete').data('autocomplete-source')
+    });
+  });
+  </script>
+</head>
+<body>
 
 <div class="field">
 
@@ -18,6 +43,7 @@
  </div>
 
 
-
+</body>
+</html>
 
 
