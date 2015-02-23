@@ -124,13 +124,13 @@ jQuery(document).ready(function() {
     });
 
     /* Flickr Feed */
-    $('#basicuse').jflickrfeed({
-        limit: 9,
-        qstrings: {
-            id: '80919450@N00'
-        },
-        itemTemplate: '<a href="{{image_b}}"><img src="{{image_m}}" alt="{{title}}" /></a>'
-    });
+    // $('#basicuse').jflickrfeed({
+    //     limit: 9,
+    //     qstrings: {
+    //         id: '80919450@N00'
+    //     },
+    //     itemTemplate: '<a href="{{image_b}}"><img src="{{image_m}}" alt="{{title}}" /></a>'
+    // });
 
     /* Right Side Calender */
     var cal = CALENDAR();
@@ -139,7 +139,7 @@ jQuery(document).ready(function() {
 
 
     /* Tooltips */
-    $('.mag-info a').tooltip();
+    // $('.mag-info a').tooltip();
 
     /* Selectors */
     $('select.cust-slctr').customSelect();
