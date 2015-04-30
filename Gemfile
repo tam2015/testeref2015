@@ -1,5 +1,6 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -47,6 +48,10 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem "capistrano", "~> 3.3.5"
+  gem 'capistrano-rvm'
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-rails'  
 end
 
 gem "less-rails"
@@ -58,3 +63,9 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'acts-as-taggable-on'
+# gem 'rubber'
+# gem 'open4'
+gem 'unicorn' 
+
+
+
