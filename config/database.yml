@@ -82,4 +82,4 @@ production:
   <<: *default
   database: deal_blog_production
   username: deal_blog
-  password: <%= ENV['DEAL_BLOG_DATABASE_PASSWORD'] %>
+  password: postgres
