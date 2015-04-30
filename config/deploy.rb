@@ -59,4 +59,4 @@ end
 #   end
 # end
 
-after 'deploy:restart', 'sidekiq:start'
+# after 'deploy:restart', 'sidekiq:start'
