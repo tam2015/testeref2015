@@ -5,7 +5,7 @@
          <% @articles.each do |article| %>
             <li>
                <div class="trans2 slide-sngl">
-                  <a class="text-center" href="#"><%= image_tag(article.image_url(:small_2), alt: "Blog", class: "lefty" ) %></a>
+                  <a class="text-center" href="#"><%= image_tag(article.pictures.first.image_url(:small_2), alt: "Blog", class: "lefty" ) %></a>
                   <h4><a href="#"><%= link_to article.title, article_path(id: article.id), method: :get %></a></h4>
                   <%= link_to(article_path(id: article.id), method: :get) do %>
                   <p class= "giveMeEllipsis_3"><%= article.content %></p>

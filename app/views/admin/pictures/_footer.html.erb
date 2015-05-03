@@ -1,0 +1,109 @@
+<div class="main-footers">
+   <div class="container">
+      <!-- Category footer -->
+      <div class="cat-ftr-cont float-width">
+         <div class="cat-ftr-cont-sngl lefty cat-brd-1">
+            <h3>Categorias</h3>
+            <% Admin::Category.all.each do |category| %>
+            <ul>
+               <li><a href="#"><%= category.name %></a></li>
+            </ul>
+            <% end %>
+         </div>
+         <div class="cat-ftr-cont-sngl lefty cat-brd-2">
+            <h3>Marcas +Procuradas</h3>
+            <ul>
+               <li><a href="#">Por Marca</a></li>
+               <li><a href="#">Latino</a></li>
+               <li><a href="#">Electronic and Disco</a></li>
+               <li><a href="#">R&B</a></li>
+               <li><a href="#">Pop</a></li>
+               <li><a href="#">Rock & Roll</a></li>
+               <li><a href="#">Ragga</a></li>
+               <li><a href="#">More...</a></li>
+            </ul>
+         </div>
+         <div class="cat-ftr-cont-sngl lefty cat-brd-3">
+            <h3>TV & Movies</h3>
+            <ul>
+               <li><a href="#">In Theaters</a></li>
+               <li><a href="#">Showtimes & Tickets</a></li>
+               <li><a href="#">Latest Trailers</a></li>
+               <li><a href="#">Release Calendar</a></li>
+               <li><a href="#">TV Home</a></li>
+               <li><a href="#">On Tonight</a></li>
+               <li><a href="#">DVD & Blu-Ray</a></li>
+            </ul>
+         </div>
+         <div class="cat-ftr-cont-sngl lefty cat-brd-4">
+            <h3>saúde</h3>
+            <ul>
+               <li><a href="#">Mobiles</a></li>
+               <li><a href="#">Desktops</a></li>
+               <li><a href="#">Outside Electronic</a></li>
+               <li><a href="#">Sound Devices</a></li>
+               <li><a href="#">AGD & RTV</a></li>
+            </ul>
+         </div>
+         <div class="cat-ftr-cont-sngl lefty cat-brd-5">
+            <h3>Games</h3>
+            <ul>
+               <li><a href="#">PC</a></li>
+               <li><a href="#">PlayStation 4</a></li>
+               <li><a href="#">Xbox One</a></li>
+               <li><a href="#">Mobiles</a></li>
+               <li><a href="#">Portable Consoles</a></li>
+               <li><a href="#">Nintendo</a></li>
+            </ul>
+         </div>
+      </div>
+      <!-- Info footer -->
+      <div class="info-ftr float-width">
+         <div class="mag-info lefty">
+            <a class="ftr-logo" href="home-1.html"><%= image_tag("../assets/img/logo_seu_barganha_footer.png", alt: "Seu Barganha" ) %></a>
+            <p>Todos os dias a equipe de curadoria do Seu Barganha analisa uma séria de produtos em lojas virtuais e físicas de todo o Brasil para encontrar o melhor para você. </a></p>
+            <div class="scl-ftr float-width">
+               <h3>STAY IN TOUCH!</h3>
+               <ul>
+
+               </ul>
+            </div>
+         </div>
+         <div class="post-ftr lefty">
+            <h3>LATEST POSTS</h3>
+            <% Admin::Article.last(3).each do |article| %>
+            <div class="pst-ftr-sngl float-width">
+               <a href="#" class="lefty pst-ftr-img">
+                  <% if article.pictures.first %>
+                     <%= image_tag(article.pictures.first.image_url(:small_3), alt: "Blog", class: "lefty" ) %>
+                  <% end %>
+               </a>
+               <h5><%= article.title %></h5>
+               <h6 class="lefty"><span><i class="fa fa-clock-o"></i><%= article.created_at %></span><span><i class="fa fa-comment-o"></i><%= article.comments.count %></span></h6>
+            </div>
+            <% end %>
+         </div>
+         <div class="twts-ftr lefty">
+            <h3>LATEST TWEETS</h3>
+            <ul>
+               <li>
+                  <p><span class="tw-uname">@EiadTweets</span> Vetstibulum laoreet is are go mauris ac <span class="hsh">#vulputate</span> pellentes , justorle atus pulvinar augue.</p>
+               </li>
+               <li>
+                  <p><span class="tw-uname">@EiadTweets</span> Vetstibulum laoreet is are go mauris ac <span class="hsh">#vulputate</span> pellentes , justorle atus pulvinar augue.</p>
+               </li>
+               <li>
+                  <p><span class="tw-uname">@EiadTweets</span> Vetstibulum laoreet is are go mauris ac <span class="hsh">#vulputate</span> pellentes , justorle atus pulvinar augue.</p>
+               </li>
+            </ul>
+            <h6><a href="#" class="all-twts righty trans1"><i class="fa fa-twitter"></i> Read all tweets</a></h6>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Copy right footer -->
+<div class="copy-rt-ftr">
+   <div class="container">
+      <a class="lefty">Seu Barganha &#169; Copyright 2014, All Rights Reserved</a>
+   </div>
+</div>

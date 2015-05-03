@@ -4,24 +4,7 @@
    <div class="main-left-side">
       <!-- The Article -->
       <div class="artcl-main float-width">
-         <div class="artcl-prev-nxt float-width">
-            <div class="artcl-prev w50 blocky">
-               <a href="#"><i class="fa fa-angle-left"></i> Post Anterior</a>
-               <%= link_to(article_path(id: @article.previous_article.id), method: :get) do %>
-               <p class= "giveMeEllipsis_1">
-                  <%= @article.previous_article.title%>
-               </p>
-               <% end %>
-            </div>
-            <div class="artcl-nxt w50 blocky text-right">
-               <a href="#">Próximo Post <i class="fa fa-angle-right"></i></a>
-               <%= link_to(article_path(id: @article.next_article.id), method: :get) do %>
-               <p class= "giveMeEllipsis_1">
-                  <%= @article.next_article.title%>
-               </p>
-               <% end %>
-            </div>
-         </div>
+         
          <div class="artcl-body float-width">
             <h2><%= @article.title %></h2>
             <h5>
@@ -30,11 +13,13 @@
                <span><i class="fa fa-comment-o"></i><%= @article.comments.count %></span>
             </h5>
             <article class="float-width articl-data">
-            <%= image_tag(@article.image_url(:post_image), alt: "Blog") %>
+            <%= image_tag(@article.pictures.first.image_url(:post_image), alt: "Blog") %>
                <p>
-
-                  <%= @article.title %>
+                  <%= @article.content %>
                </p>
+               <p>
+                  <%= link_to "ver slide", article_picture_path(article_id: params[:id], picture_id: @article.pictures.first.id) %>
+               </p>                  
             </article>
          </div>
       </div>
@@ -65,7 +50,7 @@
          <h3 class="sec-title">POSTS RELACIONADOS</h3>
          <% @article.category_articles.last(4).each do |article| %>
          <div class="reltd-sngl">
-            <%= image_tag(article.image_url(:small), alt: "Blog") %>
+            <%= image_tag(article.pictures.first.image_url(:small), alt: "Blog") %>
             <div class="reltd-sngl-txt">
                <h3><%= article.title %> </h3>
                <p><i class="fa fa-clock-o"></i><%= article.created_at %></p>

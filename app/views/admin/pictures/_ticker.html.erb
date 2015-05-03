@@ -1,0 +1,16 @@
+<div class="container">
+   <div class="float-width ticker">
+      <h3 class="cat-label1">TOP PROMO</h3>
+      <ul class="newsticker">
+      <% Admin::Article.last(4).each do |article| %>
+         <li>
+            <h4><%=article.title %></h4>
+         </li>
+      <% end %>
+      </ul>
+      <div class="ticker-ctrls">
+         <a id="tkr-prev">&#59237;</a>
+         <a id="tkr-nxt">&#59238;</a>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,43 @@
+<section class="panel" >
+  <div class= "panel-body" >
+    <h3>Adicione fotos do seu artigo</h3>
+    <%= form_for @picture, url: :article_pictures, method: :post do |f| %>
+      <%= f.hidden_field :article_id, value: params[:id] %>
+      <%= f.label :image, "Clique em Choose File depois clique em Adicionar para cada foto" %>
+      <%= f.file_field :image %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class:"form-control"  %><br />
+    
+      <%= f.label :content %>
+      <%= f.text_area :content, class:"form-control", rows:"6" %><br />
+
+
+      </br>
+      <div class="col-action text-left">
+        <%= f.button :button, type: :submit, class: "btn btn-success" do %>
+        <%= "adicionar" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section class="panel" >
+  <div class= "panel-body" >
+    <ul class="panel" style= "width: 100%; height: 60px; padding-top:15px; padding-left: 30px;">
+      <% @pictures.each do |picture| %>
+        <li class="dropdown" style="padding-right: 30px; float: left">
+          <%= image_tag picture.image %>
+          </br></br>
+          <div class="col-action text-center">
+            <%= link_to article_picture_path(picture_id: picture.id, id: picture.article_id), method: :delete, data: { confirm: 'Você tem certeza que deseja apagar?' }, class: "btn btn-danger" do %>
+             <%= "Apagar" %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </br>
+  </div>
+</section>

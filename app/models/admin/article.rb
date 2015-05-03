@@ -3,8 +3,8 @@ module Admin
     acts_as_taggable
     has_many :comments, as: :commentable
     has_many :deals
+    has_many :pictures    
     accepts_nested_attributes_for :deals
-    mount_uploader :image, ImageUploader
 
     # to search the last 4 top_articles from a specific category
     def self.top_articles category_name

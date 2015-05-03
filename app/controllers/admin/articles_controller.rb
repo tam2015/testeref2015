@@ -12,7 +12,9 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def create
-    @article = Admin::Article.create(article_params)
+    if @article = Admin::Article.create(article_params)
+      redirect_to article_pictures_path(article_id: @article.id)
+    end
   end
 
   def show
@@ -42,7 +44,7 @@ class Admin::ArticlesController < ApplicationController
   private
 
     def article_params
-      params.require(:admin_article).permit( :title, :content, :image, :tag_list, deals_attributes: [:brand_name, :product_description, :category_name, :store_name] )
+      params.require(:admin_article).permit( :title, :content, :tag_list, deals_attributes: [:brand_name, :product_description, :category_name, :store_name] )
     end
 
 end

@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     resources :stores
     resources :products
     resources :deals
-    resources :articles
+    resources :articles do
+      resources :pictures
+    end
     resources :newsletter_users, only: :create
     get "/category", to: "articles#category"
     get 'tags/:tag', to: 'articles#category', as: :tag
