@@ -18,7 +18,7 @@ class Admin::PicturesController < ApplicationController
   end
 
   def show
-    @picture = Admin::Picture.find params[:picture_id]
+    @picture = Admin::Picture.find_by(id: params[:picture_id], article_id: params[:article_id] )
   end
 
   def destroy

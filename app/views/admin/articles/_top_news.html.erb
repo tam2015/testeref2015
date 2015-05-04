@@ -7,14 +7,14 @@
             <div class="cover boxcaption3">
                <h3><a href="#single.html"><%= link_to @articles[0].title, article_path(id: @articles[0].id), method: :get %></a></h3>
                <p class="artcl-time-1">
-                  <span><i class="fa fa-clock-o"></i><%= @articles[0].created_at %></span>
+                  <span><i class="fa fa-clock-o"></i><%= @articles[0].created_at.strftime("%d/%m/%y - %H:%M") %></span>
                   <span><i class="fa fa-comment-o"></i>21 comments</span>
                   <%= link_to(article_path(id: @articles[0].id), method: :get) do %>
                   <span><i class="fa fa-comment-o"></i>Ver</span>
                   </i>
                   <% end %>
                </p>
-               <p class= "giveMeEllipsis_2"><%= @articles[0].content %></p>
+               <p class= "giveMeEllipsis_2"><%= @articles[0].content.html_safe %></p>
             </div>
          </div>
          <div class="big-two-2 blocky boxgrid3 caption">
@@ -22,14 +22,14 @@
             <div class="cover boxcaption3">
                <h3><a href="#single.html"><%= link_to @articles[1].title, article_path(id: @articles[1].id), method: :get %></a></h3>
                <p class="artcl-time-1">
-                  <span><i class="fa fa-clock-o"></i><%= @articles[1].created_at %></span>
+                  <span><i class="fa fa-clock-o"></i><%= @articles[1].created_at.strftime("%d/%m/%y - %H:%M") %></span>
                   <span><i class="fa fa-comment-o"></i>21 comments</span>
                   <%= link_to(article_path(id: @articles[1].id), method: :get) do %>
                   <span><i class="fa fa-comment-o"></i>Ver</span>
                   </i>
                   <% end %>
                </p>
-               <p class= "giveMeEllipsis_2"><%= @articles[1].content %></p>
+               <p class= "giveMeEllipsis_2"><%= @articles[1].content.html_safe %></p>
             </div>
          </div>
 
@@ -39,24 +39,24 @@
       <a href="#"><%= image_tag(@articles[2].pictures.first.image_url(:small), alt: "Blog", class: "lefty" ) %></a>
       <h4 class="lefty giveMeEllipsis_2"><%= link_to @articles[2].title, article_path(id: @articles[2].id), method: :get %></h4></br></br>
       <a class="lefty cat-a cat-label4" href="#"><%= @articles[2].category_name %></a></br>
-      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[2].created_at %></span></p>
+      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[2].created_at.strftime("%d/%m/%y - %H:%M") %></span></p>
    </div>
    <div class="tn-small-1 blocky">
       <a href="#"><%= image_tag(@articles[3].pictures.first.image_url(:small), alt: "Blog", class: "lefty" ) %></a>
       <h4 class="lefty giveMeEllipsis_2"><%= link_to @articles[3].title, article_path(id: @articles[3].id), method: :get %></h4></br></br>
       <a class="lefty cat-a cat-label2" href="#"><%= @articles[3].category_name %></a></br>
-      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[3].created_at %></span></p>
+      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[3].created_at.strftime("%d/%m/%y - %H:%M") %></span></p>
    </div>
    <div class="tn-small-1 blocky">
       <a href="#"><%= image_tag(@articles[4].pictures.first.image_url(:small), alt: "Blog", class: "lefty" ) %></a>
       <h4 class="lefty giveMeEllipsis_2"><%= link_to @articles[4].title, article_path(id: @articles[4].id), method: :get %></h4></br></br>
       <a class="lefty cat-a cat-label3" href="#"><%= @articles[4].category_name %></a></br>
-      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[4].created_at %></span></p>
+      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[4].created_at.strftime("%d/%m/%y - %H:%M") %></span></p>
    </div>
    <div class="tn-small-1 blocky">
       <a href="#"><%= image_tag(@articles[5].pictures.first.image_url(:small), alt: "Blog", class: "lefty" ) %></a>
       <h4 class="lefty giveMeEllipsis_2"><%= link_to @articles[5].title, article_path(id: @articles[5].id), method: :get %></h4></br></br>
       <a class="lefty cat-a cat-label5" href="#"><%= @articles[5].category_name %></a></br>
-      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[5].created_at %></span></p>
+      <p class="righty"><span><i class="fa fa-clock-o"></i><%= @articles[5].created_at.strftime("%d/%m/%y - %H:%M") %></span></p>
    </div>
 </div>

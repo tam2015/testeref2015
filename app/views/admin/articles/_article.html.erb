@@ -9,17 +9,30 @@
             <h2><%= @article.title %></h2>
             <h5>
                <span><i class="fa fa-user"></i><%= @article.author %></span>
-               <span><i class="fa fa-clock-o"></i><%= @article.created_at %></span>
+               <span><i class="fa fa-clock-o"></i><%= @article.created_at.strftime("%d/%m/%y - %H:%M") %></span>
                <span><i class="fa fa-comment-o"></i><%= @article.comments.count %></span>
             </h5>
+            <% if slide_show @article%>
+               <p>
+                  <%= link_to article_picture_path(article_id: params[:id], picture_id: @article.pictures[1].id), method: :get, class: "btn btn-success" do %>
+                     <%= "Ver imagens" %>
+                  <% end %>
+               </p>
+            <% end %>              
             <article class="float-width articl-data">
             <%= image_tag(@article.pictures.first.image_url(:post_image), alt: "Blog") %>
                <p>
-                  <%= @article.content %>
+                  <%= @article.content.html_safe %>
                </p>
-               <p>
-                  <%= link_to "ver slide", article_picture_path(article_id: params[:id], picture_id: @article.pictures.first.id) %>
-               </p>                  
+            </br>
+            </br>
+               <% if slide_show @article%>
+                  <p>
+                     <%= link_to article_picture_path(article_id: params[:id], picture_id: @article.pictures[1].id), method: :get, class: "btn btn-success" do %>
+                        <%= "Ver imagens" %>
+                     <% end %>
+                  </p>
+               <% end %>                  
             </article>
          </div>
       </div>
@@ -53,7 +66,7 @@
             <%= image_tag(article.pictures.first.image_url(:small), alt: "Blog") %>
             <div class="reltd-sngl-txt">
                <h3><%= article.title %> </h3>
-               <p><i class="fa fa-clock-o"></i><%= article.created_at %></p>
+               <p><i class="fa fa-clock-o"></i><%= article.created_at.strftime("%d/%m/%y - %H:%M") %></p>
             </div>
          </div>
          <% end %>

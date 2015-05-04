@@ -32,6 +32,11 @@ module Admin
       category_name = deal.category_name
     end
 
+    def sub_category_name
+      deal = Admin::Deal.find_by(article_id: id)
+      sub_category_name = deal.sub_category_name
+    end
+
     def category_count
       category = Admin::Category.find_by(name: category_name)
       category_id= category.id

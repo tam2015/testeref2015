@@ -45,6 +45,13 @@ module Admin
       self.category = Admin::Category.find_or_create_by(name: name) #if description.present?
     end
 
+    def sub_category_name
+      sub_category.try(:name)
+    end
+
+    def sub_category_name=(name)
+      self.sub_category = Admin::SubCategory.find_or_create_by(name: name) #if description.present?
+    end
 
 
 

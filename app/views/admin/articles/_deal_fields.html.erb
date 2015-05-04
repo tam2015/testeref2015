@@ -40,6 +40,10 @@
    <%= f.label :category_name %>
    <%= f.collection_select :category_name, Admin::Category.all,:name,:name, include_blank: true  %><br /><br/>
 
+   <%= f.label :sub_category_name %>
+   <%= f.collection_select :sub_category_name, Admin::SubCategory.all,:name,:name, include_blank: true  %><br /><br/>
+
+
  </div>
 
 

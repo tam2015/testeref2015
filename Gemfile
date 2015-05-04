@@ -65,7 +65,9 @@ gem 'omniauth-facebook'
 gem 'acts-as-taggable-on'
 # gem 'rubber'
 # gem 'open4'
-gem 'unicorn' 
+gem 'unicorn'
+
+gem 'ckeditor'
 
 
 

@@ -6,7 +6,7 @@
          <div class="the-comment lefty">
             <h4>
                <span class="comntr-nm lefty"><%= @article.author %> </span>
-               <span class="cmnt-dt lefty"> <%= @article.created_at %></span>
+               <span class="cmnt-dt lefty"> <%= @article.created_at.strftime("%d/%m/%y - %H:%M") %></span>
                <a class="righty" href="#"><span class="cmnt-reply">Reply</span></a>
             </h4>
             <p>Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.</p>
@@ -18,7 +18,7 @@
          <div class="the-comment lefty">
             <h4>
                <span class="comntr-nm lefty"><%= @article.author %> </span>
-               <span class="cmnt-dt lefty"> <%= @article.created_at %></span>
+               <span class="cmnt-dt lefty"> <%= @article.created_at.strftime("%d/%m/%y - %H:%M") %></span>
                <a class="righty" href="#"><span class="cmnt-reply">Reply</span></a>
             </h4>
             <p>Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.</p>

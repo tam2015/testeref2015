@@ -34,7 +34,7 @@ class Admin::ArticlesController < ApplicationController
     if params[:tag]
       @articles = Admin::Article.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 6)
     elsif  params[:query]
-      @articles = Admin::Article.where("title ilike :q or content ilike :q", q: "%#{params[:query]}%").paginate(page: params[:page], per_page: 6)
+      @articles = Admin::Article.where("title ilike :q or content ilike :q", q: "%#{params[:query]}%").includes(:pictures).paginate(page: params[:page], per_page: 6)
     else
       @articles = Admin::Article.all.paginate(page: params[:page], per_page: 6)
     end
@@ -44,7 +44,7 @@ class Admin::ArticlesController < ApplicationController
   private
 
     def article_params
-      params.require(:admin_article).permit( :title, :content, :tag_list, deals_attributes: [:brand_name, :product_description, :category_name, :store_name] )
+      params.require(:admin_article).permit( :title, :content, :tag_list, deals_attributes: [:brand_name, :product_description, :category_name, :sub_category_name, :store_name] )
     end
 
 end

@@ -11,11 +11,9 @@
                         <h3 class="cat-label cat-label1"><a href="#"><%= article.category_name %></a></h3>
                         <div class="hm-sldr-caption">
                            <h3 class= "giveMeEllipsis_2"><a href="#"><%=link_to article.title, article_path(id: article.id), method: :get %><span ><%= article.category_count %></span></a></h3>
-                           <%= link_to(article_path(id: article.id), method: :get) do %>
                            <p class= "giveMeEllipsis_3">
-                              <%= article.content %>
+                              <%= article.content.html_safe %>
                            </p>
-                           <% end %>
                         </div>
                      </li>
                   <% end %>
@@ -32,7 +30,7 @@
             <div class="cover boxcaption">
                <h3><a href="#single.html"><%= Admin::Article.top_articles("saúde")[0].title %></a><span ><%= Admin::Article.top_articles("saúde")[0].category_count %></span></h3>
                <p class= "giveMeEllipsis_2">
-                  <%= Admin::Article.top_articles("saúde")[0].content %>
+                  <%= Admin::Article.top_articles("saúde")[0].content.html_safe %>
                </p>
                <%= link_to(article_path(id: Admin::Article.top_articles("saúde")[0].id), method: :get) do %>
                Mais <i class="fa fa-angle-double-right">
@@ -47,7 +45,7 @@
             <div class="cover boxcaption">
                <h3><a href="#single.html"><%= Admin::Article.top_articles("saúde")[1].title %></a><span><%= Admin::Article.top_articles("saúde")[1].category_count %></span></h3>
                <p class= "giveMeEllipsis_2">
-                  <%= Admin::Article.top_articles("saúde")[1].content %>
+                  <%= Admin::Article.top_articles("saúde")[1].content.html_safe %>
                </p>
                <%= link_to(article_path(id: Admin::Article.top_articles("saúde")[1].id), method: :get) do %>
                Mais <i class="fa fa-angle-double-right">
@@ -64,7 +62,7 @@
             <div class="cover boxcaption">
                <h3><a href="#single.html"><%= Admin::Article.top_articles("saúde")[2].title %></a><span ><%= Admin::Article.top_articles("saúde")[2].category_count %></span></h3>
                <p class= "giveMeEllipsis_2">
-                  <%= Admin::Article.top_articles("saúde")[2].content %>
+                  <%= Admin::Article.top_articles("saúde")[2].content.html_safe %>
                </p>
                <%= link_to(article_path(id: Admin::Article.top_articles("saúde")[2].id), method: :get) do %>
                Mais <i class="fa fa-angle-double-right">

@@ -8,9 +8,9 @@
                   <a class="text-center" href="#"><%= image_tag(article.pictures.first.image_url(:small_2), alt: "Blog", class: "lefty" ) %></a>
                   <h4><a href="#"><%= link_to article.title, article_path(id: article.id), method: :get %></a></h4>
                   <%= link_to(article_path(id: article.id), method: :get) do %>
-                  <p class= "giveMeEllipsis_3"><%= article.content %></p>
+                  <p class= "giveMeEllipsis_3"><%= article.content.html_safe %></p>
                   <% end %>
-                  <h6><span><i class="fa fa-clock-o"></i><%= article.created_at %></span></h6>
+                  <h6><span><i class="fa fa-clock-o"></i><%= article.created_at.strftime("%d/%m/%y - %H:%M") %></span></h6>
                </div>
             </li>
          <% end %>

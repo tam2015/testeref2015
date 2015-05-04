@@ -13,8 +13,8 @@
    <%= f.label :title %>
    <%= f.text_field :title, class:"form-control"  %><br />
   
-   <%= f.label :content %>
-   <%= f.text_area :content, class:"form-control"  %><br />
+  <%= f.cktext_area :content, :value => 'Default value', :id => 'sometext' %>
+
 
    <%= f.label :tag_list, "Tags (separadas por vírgula)" %><br />
    <%= f.text_field :tag_list, class:"form-control" %><br /><br />

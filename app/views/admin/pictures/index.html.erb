@@ -9,8 +9,7 @@
       <%= f.label :title %>
       <%= f.text_field :title, class:"form-control"  %><br />
     
-      <%= f.label :content %>
-      <%= f.text_area :content, class:"form-control", rows:"6" %><br />
+      <%= f.cktext_area :content, :value => 'Default value', :id => 'sometext' %>
 
 
       </br>
